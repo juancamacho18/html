@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO</title>
+    <link rel="stylesheet" href="../CSS/contacto.css">
+</head>
+<body>
+    <header>
+        <img src="../img/incap.png" alt="" width="100" height="100">
+        <h1>FORMULARIOS Y LISTAS HTML</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Productos</li>
+            <li>Servicios</li>
+            <li>Contacto</li>
+        </ul>
+    </nav>
+    <section>
+        <form action="datos.php" method="post">
+        <!-- seccion de ingreso de nombre-->
+        <label>Nombre completo:</label>
+        <input name="Nombre" type="text" placeholder="Ingrese su nombre comnpleto" required=""> <br><br>
+        <hr>
+
+        <!-- seccion ingreso email-->
+        <label>E-mail:</label>
+        <input type="email" name="email" placeholder="Ingrese su Email" required=""><br><br>
+        <hr>
+
+        <!-- seccion ingresar contraseña-->
+        <label>Contraseña:</label>
+        <input type="password" name="contraseña" placeholder="Ingrese su contraseña" required=""><br><br>
+        <hr>
+
+        <!-- seccion de hobbies-->
+        <label>Selecciona tus hobbies:</label>
+        <br>
+        <input type="checkbox">Cine<br>
+        <input type="checkbox">Lectura<br>
+        <input type="checkbox">Deporte<br>
+        <br>
+        <hr>
+
+        <!-- seccion de estado civil-->
+        <label>Estado civil</label><br>
+        <input type="radio" name="estcivil" value="casado">Casado(a)<br>
+        <input type="radio" name="estcivil" value="soltero">Soltero(a)<br>
+        <input type="radio" name="estcivil" value="viudo">Viudo(a)<br>
+        <br>
+        <hr>
+
+        <!-- seleccionar opcion lista-->
+        <label>PROGRAMAS TECNICOS:</label>
+        <select name="select">
+            <option>Seleccione programa...</option>
+            <option>Sistemas</option>
+            <option>Diseño gráfico</option>
+            <option>Contabilidad</option>
+        </select>
+        <br>
+        <hr>
+        <label>Comentario:</label><br>
+            <textarea name="mensaje" cols="40" rows="5"></textarea>
+        <br><br>
+        <!-- seccion de botones formulario  submit:-->
+        <button type="submit">Enviar</button>
+        <button type="reset">Cancelar</button>
+        <br>
+        <hr>
+        </form>
+    </section>
+    <!-- seccion de pie de pagina-->
+    <footer>
+        Derechos reservados
+    </footer>
+</body>
+</html>
