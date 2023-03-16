@@ -1,0 +1,34 @@
+/* seccion de estilos CSS3 para la pagina web */
+body{
+    background-color: rgba(255, 255,255,0.6); 
+    background-image: url(../img/natacion.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode:luminosity ;
+}
+/* seccion de estilos CSS3 para la cabecera pagina web */
+header{
+    background:rgba(255, 255,255,0.6);
+    border:2px solid blue;
+    border-radius: 20px 20px 10px 10px;
+    display: flex;
+    flex-direction: row;/*dirección horizontal o en fila*/
+    justify-content: center;/*alinea horizontalmente*/
+    align-items: center;/*alinea verticalmente*/
+    backdrop-filter: blur(5px);
+    }
+    header img{
+        padding: 15px;
+    }
+    /* seccion de estilos CSS3 para la barra de menu pagina web */
+    nav{
+        border:2px solid green;
+        border-radius: 22px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content:space-between; 
+        align-items: center; 
+        padding: 5px;
+        margin:5px;
+    }
