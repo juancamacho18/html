@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    max-height: 100%;
+}
+body{
+    font-family: Tahoma;
+    font-size: 18px;
+    background-image: url(../IMG/incap\ chapinero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* Seccion maquetacion css para header */
+#header{
+    grid-area: header; /* Se asigna nombre al header para display grid*/
+    background-color: lightsteelblue;
+    border: 2px solid blue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+/* Seccion maquetacion css para nav menu */
+ul{
+    padding: 0;
+    margin: 0 1px;
+}
+li{
+    display: inline; /* coloca en horizontal lista con items*/
+    list-style: none; /*quitar viñetas*/
+    margin: 0 5px;
+    font: bold 12px verdana;
+
+}
+a{
+    color: white;
+    text-decoration: none; /* quitar subrayado hipervinculos*/
+}
+#menu{
+    grid-area: nav; /* se asigna nombre al nav para display grid*/
+    background-color: blue;
+    border: 2px solid greenyellow;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+/* Seccion maquetacion css buscador web */
+.buscarbox input{
+    height: 25px;
+    width: 0;
+    padding: 0;
+    border-radius: 40px;
+    border: 0;
+    padding-right: 50px;
+    transition: 0.8s ease; /* animacion lenta*/
+}
+.buscarbox input:hover{
+    width: 150px;
+    padding-left: 10px;
+    outline: none; /* quitar bordes*/
+}
+/* Seccion maquetacion css main */
+#main{
+    grid-area: main; /* Se asigna nombre al section para display grid*/
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px); /* Efecto glass*/
+    border: 2px solid greenyellow;
+    max-width: 100%;
+    height: auto;
+}
+figure{
+    display: inline;
+    margin: 45px;
+    padding: 5px;
+}
+/* Seccion maquetacion css para article */
+.programa{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 45%;
+    height: 200px;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+/* Seccion maquetacion barra aside lateral derecha */
+#sidebar{
+    grid-area: sidebar; /* se asigna nombre al aside para css grid*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+}
+iframe{
+    max-width: 100%;
+    height: auto;
+}
+/* Seccion maquetacion css para footer */
+#footer{
+    grid-area: footer; /* se asigna nombre al footer para CSS grid*/
+    padding-top: 20px;
+    border: 2px solid yellowgreen;
+    border-radius: 2opx;
+    clear: both; /* eliminar los float de la pagina web */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+}
+#redes a{
+    padding: 5px;
+    margin: 0;
+}
+/* Colocar animacion a los iconos fontawesome de redes sociales */
+#redes a i:hover{
+    transform: scale(1.5); /* Aumenta de tamaño 1.5 al pasar mouse por encima*/
+}
+/* Seccion estilos iconos fontawesome, buscar todas las cases de la etiqueta i que comienzen por fa*/
+i[class^="fa"]{
+    color: grey;
+    font-size: 18px;
+}
+i[class^="fab"]{
+    color: grey;
+    font-size: 30px;
+    border: 1px solid transparent;
+    margin: 0;
+}
+.fa-bar{
+    font-size: 30px !important;
+    color: black !important;
+}
+.openmenu{
+    display: none; /* Oculta icono de hamburguesa 3 lineas*/
+    cursor: pointer;
+    font-size: 24px;
+}
+/* ****************************************** */
+/* Seccion de CSS grid para diseño web responsive: Tecnica avanzado CSS que pemite manejar todo a base de rejillas como una cuadricula se le puede definir alto y ancho en px*/
+#grid-container > *{
+    text-align: center;
+    box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+}
+/* Seccion para definir plantilla css grid para VISTA PC - 3 columnas  */
+#grid-container{
+    display: grid;
+    grid-gap:10px; /* espacio entre rejillas del contenedor*/
+    grid-template:
+    "header header header" 150px
+    "nav nav nav" 50px
+    "main main sidebar" 300px
+    "main main sidebar" 300px
+    "main main sidebar" 250px
+    "footer footer footer" 150px /
+    1250px 350px 250px;
+}
+/* Seccion para definir plantilla CSS grid para tablets 2 columnas */
+@media (max-width:1024px){
+    #grid-container {
+        grid-template: 
+        "header header" 170px
+        "nav main" 800px
+        "nav main" 700px
+        "sidebar sidebar" 650px
+        "footer footer" 100px /
+        250px 450px;
+        font-size: 75%; /*Cambia el tamaño de fuente*/
+    }
+    #menu{
+        background-color: blue;       
+        border-radius: 22px;       
+        display: block;       
+        padding: 45px;       
+        margin:40px;       
+        height: auto;       
+        text-align: center;       
+    }        
+    #main{        
+        display: flex;       
+        flex-direction: column;/* cambia la forma de dirección de fila a col*/       
+        justify-content: space-between;       
+        align-items:center;        
+        flex-wrap: wrap;/*se define el auto ajuste de ancho dispostivo pasa a sgte. linea*/        
+        max-width:100%;       
+    }        
+    .programa{       
+        display: flex;        
+        flex-direction: column;        
+        justify-content: space-between;       
+        align-items:center;       
+        flex-wrap: wrap;      
+        max-width: 100%;     
+        height: auto;     
+        border: 1px solid black;      
+    }       
+    iframe{        
+        max-width: 100%;       
+        height: auto;        
+    }        
+    .buscarbox{        
+        display:block;        
+        padding: 5px;        
+    }        
+    }
+    
+
+
+
