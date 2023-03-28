@@ -212,7 +212,57 @@ i[class^="fab"]{
         padding: 5px;        
     }        
     }
-    
+    /* Seccion vista celular una columna */
+    @media (max-width:640px){
+        #grid-container{
+            grid-template: 
+            "header" 150px
+            "nav" 50px
+            "main" 1120px
+            "sidebar" 800px
+            "footer" 100px /
+            500px;
+            font-size: 60%;
+        }
+        /* La barra <nav> se programara con javascript_ por medio de funciones boton hamburguesa */
+        #menu{
+            display: none; /*Se oculta contenedor nav opciones*/
+        }
+        /* Se define que aparezca el menu hamburguesa en la parte superior */
+        .openmenu{
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 120px;
+            z-index:99; /*Se define capa encima del texto de contenido HTML*/
+            cursor: pointer;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 100%;
+            height: auto;
+        }
+        .programa{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid black;
+        }
+        iframe{
+            max-width: 100%;
+            height: auto;
+        }
+        .buscarbox{
+            display: none;
+        }
+    }
 
 
 
